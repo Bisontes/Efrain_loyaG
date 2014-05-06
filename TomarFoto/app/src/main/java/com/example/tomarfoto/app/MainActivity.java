@@ -23,7 +23,8 @@ public class MainActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        //here,we are making a folder named picFolder to store pics taken by the camera using this application
+
+        // Aqui creamos una carpeta llamada picFolfer donde se van a guardar las fotos tomadas en la aplicacion
         final String dir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES) + "/picFolder/";
         File newdir = new File(dir);
         newdir.mkdirs();
@@ -31,7 +32,8 @@ public class MainActivity extends ActionBarActivity {
         capture.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
-                // here,counter will be incremented each time,and the picture taken by camera will be stored as 1.jpg,2.jpg and likewise.
+
+                //Aqui, se van a ir contando las fotos por cada incremento, la foto tomada por la camara se va ir guardando como 1.jpg,2.jpg, etc.
                 count++;
                 String file = dir+count+".jpg";
                 File newfile = new File(file);
@@ -65,6 +67,7 @@ public class MainActivity extends ActionBarActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         
         // Inflate the menu; this adds items to the action bar if it is present.
+        //Aqui se agregan items que haran la accion de la barra si esta esta presente
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
@@ -74,6 +77,9 @@ public class MainActivity extends ActionBarActivity {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
+
+        //cambia la barra de accion de los elementos al hacer click aqui.la barra de accion actomatiamente
+        //intercambia click en el home/up boton, tanto como tu especifiques una actividad padre en el androidManifest.xml.
         int id = item.getItemId();
         if (id == R.id.action_settings) {
             return true;
